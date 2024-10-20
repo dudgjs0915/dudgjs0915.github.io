@@ -1,1 +1,383 @@
-"HELLO WORLD!"
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Younghun Kim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        nav {
+            background-color: #f8f9fa;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .intro-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .left-column {
+            flex: 1;
+        }
+        .right-column {
+            flex: 2;
+        }
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0066cc;
+        }
+        .edu-contact-container {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .education, .contact {
+            flex: 1;
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill {
+            background-color: #e6f0ff;
+            color: #0066cc;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .contact a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        .tag-medical { background-color: #e6f3e6; color: #2e8b57; }
+        .tag-vlm { background-color: #ffe6e6; color: #d62828; }
+        .tag-climate { background-color: #fff0e6; color: #ed8936; }
+        .tag-deepfake { background-color: #e6f0ff; color: #4a69bd; }
+        .publications {
+            margin-top: 40px;
+        }
+        .publications h3 {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .publication {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .publication-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .publication-content {
+            flex: 1;
+        }
+        .publication-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .publication-authors {
+            margin-bottom: 5px;
+        }
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .publication-links a {
+            margin-right: 10px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .publication-links a:hover {
+            text-decoration: underline;
+        }
+        .bg-white { background-color: #ffffff; }
+        .bg-gray { background-color: #f5f5f5; }
+        @media (max-width: 768px) {
+            .intro-container, .edu-contact-container {
+                flex-direction: column;
+            }
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            body {
+                padding-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Others</a></li>
+        </ul>
+    </nav>
+
+    <div class="bg-white">
+        <div class="section-container intro-container">
+            <div class="left-column">
+                <img src="images/yh.jpg" alt="Younghun Kim의 프로필 사진" class="profile-img">
+                <h1>Younghun Kim</h1>
+                <p class="subtitle">Master in GGGS at KAIST</p>
+                <div class="links">
+                    <a href="https://scholar.google.com/citations?user=sXd5qSAAAAAJ&hl=en">Google Scholar</a>
+                    <a href="https://github.com/dudgjs0915">Github</a>
+                    <a href="#">CV</a>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <section id="about">
+                    <p>I am currently pursuing a Master's degree in GGGS at KAIST.</p>
+                    <p>While theoretical knowledge is critical, its real-world application is just as essential. I am deeply passionate about exploring the diverse applications of deep learning across various fields. In particular, I am keenly interested in ensuring the robustness and stability of deep learning models, especially when applied in complex, real-world scenarios. Through my work, I aim to bridge the gap between groundbreaking theory and practical implementation, ensuring that deep learning innovations are both powerful and reliable.</p>
+                    <p>My work explores the following, but not limited to:</p>
+                    <ul>
+                        <li>
+                            AI Safety <span class="tag tag-deepfake">AI-Safety</span>
+                            <ul>
+                                <li>Deepfake Detection</li>
+                                <li>Image Forensic</li>
+                                <li>Bias</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Medical AI <span class="tag tag-medical">Medical AI</span>
+                        </li>
+                        <li>
+                            Vision Language Models <span class="tag tag-vlm">Vision-Language</span>
+                        </li>
+                        <li>
+                            Climate Adapatation <span class="tag tag-climate">Climate AI</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-gray">
+        <div class="section-container edu-contact-container">
+            <section id="education" class="education">
+                <h2>Education</h2>
+                <ul>
+                    <li>M.S. in GGGS, KAIST, 2026 (Expected)</li>
+                    <li>B.S. in CS, HGU, 2024 <br><span style="font-size: smaller;">(Major GPA: 4.27/4.5)</span></li>
+                </ul>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Contact</h2>
+                <p><i class="fas fa-envelope"></i> younghun1664@kaist.ac.kr</p>
+                <p><i class="fas fa-envelope"></i> dudgjs4248@gmail.com</p>
+                <p>291, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea 34141</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="bg-white">
+        <div class="section-container">
+            <section id="publications" class="publications">
+                <h2>Publications</h2>
+                <h3>2024</h3>
+                <div class="publication">
+                    <img src="images/FRIDAY.png" alt="FRIDAY" class="publication-image">
+                    <div class="publication-content">
+                        <span class="tag tag-deepfake">Deepfake Detection</span>
+                        <div class="publication-title">FRIDAY: Mitigating Unintentional Facial Identity in Deepfake Detectors Gudided by Facial Recognizers</div>
+                        <div class="publication-authors"><strong>Younghun Kim</strong>, Myung-Joon Kwon, Wonjun Lee, and Changick Kim </div>
+                        <div class="publication-venue">[C1] IEEE International Conference on Visual Communication and Image Processing (VCIP) 2024</div>
+                        <div class="publication-links">
+                            <a href="#">paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication">
+                    <img src="images/pecinet.png" alt="PECI" class="publication-image">
+                    <div class="publication-content">
+                        <span class="tag tag-medical">Medical Segmentation</span>
+                        <div class="publication-title">PECI-Net: Bolus segmentation from video fluoroscopic swallowing study images using preprocessing ensemble and cascaded inference</div>
+                        <div class="publication-authors">Dougho Park, <strong>Younghun Kim</strong>, Harim Kang, Junmyeoung Lee, Jinyoung Choi, Taeyeon Kim, Sangeok Lee, Seokill Son, Minsol Kim, and Injung Kim</div>
+                        <div class="publication-venue">[J1] Computers in Biology and Medicine 2024 (IF: 7.7)</div>
+                        <div class="publication-links">
+                            <a href="https://arxiv.org/abs/2403.14191">paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication">
+                    <img src="images/partial.png" alt="Diffusion Model Patching" class="publication-image">
+                    <div class="publication-content">
+                        <span class="tag tag-deepfake">Deepfake Detection</span>
+                        <div class="publication-title">Improving the Generalization performance of Deepfake Detection through a Partial Image Manipulation Augmentation Technique</div>
+                        <div class="publication-authors"><strong>Younghun Kim</strong>, Myung-Joon Kwon, Wonjun Lee, and Changick Kim </div>
+                        <div class="publication-venue">[D1] 대한전자공학회 학술대회 2024</div>
+                        <div class="publication-links">
+                            <a href="https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11890953">paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication">
+                    <img src="images/ens.png" alt="FRIDAY" class="publication-image">
+                    <div class="publication-content">
+                        <span class="tag tag-deepfake">IFL</span>
+                        <div class="publication-title">Ensembling Pretrained Models for Enhanced Generalization in Synthetic Image Detection</div>
+                        <div class="publication-authors">Myung-Joon Kwon, Wonjun Lee, <strong>Younghun Kim</strong>, and Changick Kim </div>
+                        <div class="publication-venue">[D2] 대한전자공학회 학술대회 2024</div>
+                        <div class="publication-links">
+                            <a href="https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11890973">paper</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication">
+                    <img src="images/combat.png" alt="FRIDAY" class="publication-image">
+                    <div class="publication-content">
+                        <span class="tag tag-deepfake">Bias</span>
+                        <div class="publication-title">Combatting Bias: Corrective Measures through Adversarial Training in Neural Networks</div>
+                        <div class="publication-authors">Wonjun Lee, Myung-Joon Kwon, <strong>Younghun Kim</strong>, and Changick Kim </div>
+                        <div class="publication-venue">[D3] 대한전자공학회 학술대회 2024</div>
+                        <div class="publication-links">
+                            <a href="https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11890954">paper</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="bg-gray">
+        <div class="section-container">
+            <section id="projects">
+                <h2>Projects</h2>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="bg-white">
+        <div class="section-container">
+            <section id="skills">
+                <h2>Awards</h2>
+            </section>
+        </div>
+    </div>
+    <div class="bg-gray">
+        <div class="section-container">
+            <section id="projects">
+                <h2>Experiences</h2>
+
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                const navHeight = document.querySelector('nav').offsetHeight;
+                const targetPosition = 
+                    targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
